@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>N.V. Ramayya | Insurance Agency Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;700&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--k:#1C1C1C;--k2:#2D2D2D;--i:#D6EFFF;--g:linear-gradient(135deg,#D6EFFF,#2D2D2D);--gt:linear-gradient(100deg,#fff 0%,#D6EFFF 45%,#6f8794 100%);
+--d:'Sora','Helvetica Neue',Arial,sans-serif;--b:'Manrope',system-ui,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--k);color:#e4f3fd;font:400 17px/1.7 var(--b);overflow-x:hidden}
+h1,h2,h3,p{margin:0}a{color:inherit}
+:focus-visible{outline:2px solid var(--i);outline-offset:3px}
+section{position:relative;padding:clamp(70px,10vw,130px) clamp(20px,5vw,72px);overflow:hidden}
+.w{position:relative;z-index:1;max-width:1200px;margin:0 auto}
+canvas.dots{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.glow{position:absolute;border-radius:50%;filter:blur(90px);opacity:.35;background:var(--i);pointer-events:none;animation:fl 14s ease-in-out infinite alternate}
+@keyframes fl{to{transform:translate(60px,40px) scale(1.15)}}
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;padding:calc(10px + env(safe-area-inset-top,0px)) clamp(14px,4vw,48px) 10px}
+.nv{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 12px 10px 22px;border-radius:999px;background:rgba(28,28,28,.6);backdrop-filter:blur(16px);border:1px solid rgba(214,239,255,.18);font:500 14px var(--d)}
+.nv b{font-weight:700;letter-spacing:-.02em}
+.nv nav{display:flex;gap:26px}.nv nav a{text-decoration:none;opacity:.75}.nv nav a:hover{opacity:1}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font:500 15px var(--d);text-decoration:none;border:1px solid rgba(214,239,255,.4);transition:transform .3s,box-shadow .3s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:linear-gradient(135deg,#D6EFFF,#8fb3c9);color:var(--k);border:0;box-shadow:0 8px 30px rgba(214,239,255,.25)}
+#mb{display:none;background:none;border:1px solid rgba(214,239,255,.4);color:var(--i);border-radius:999px;padding:8px 14px;font:500 13px var(--d)}
+/* type */
+.gt{background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent}
+h1{font:700 clamp(40px,6.6vw,92px)/1.02 var(--d);letter-spacing:-.045em}
+h2{font:700 clamp(32px,4.6vw,62px)/1.06 var(--d);letter-spacing:-.04em;margin-bottom:14px}
+.sub{max-width:56ch;color:rgba(228,243,253,.7);margin-bottom:clamp(36px,5vw,64px)}
+.tag{display:inline-block;padding:6px 14px;border-radius:999px;border:1px solid rgba(214,239,255,.3);background:rgba(214,239,255,.07);font:500 13px var(--d);color:var(--i);margin-bottom:22px}
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:130px;background:radial-gradient(ellipse at 80% 20%,rgba(214,239,255,.16),transparent 55%),linear-gradient(160deg,#2D2D2D,#1C1C1C 60%)}
+.hg{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(32px,5vw,72px);align-items:center}
+.hero p.l{margin:24px 0 34px;max-width:50ch;font-size:clamp(17px,1.5vw,20px);color:rgba(228,243,253,.8)}
+.por{position:relative;aspect-ratio:4/5;border-radius:28px;background:linear-gradient(160deg,rgba(214,239,255,.9),rgba(45,45,45,.9)) ;padding:2px}
+.por>div:first-child{height:100%;border-radius:26px;background:linear-gradient(170deg,#3a4750,#1C1C1C);display:grid;place-items:center;text-align:center;padding:24px;color:rgba(214,239,255,.7);font-size:14px;position:relative;overflow:hidden}
+.por>div:first-child::before{content:"NVR";position:absolute;font:700 140px var(--d);letter-spacing:-.06em;color:rgba(214,239,255,.07)}
+.chip{position:absolute;padding:14px 18px;border-radius:18px;background:rgba(28,28,28,.75);backdrop-filter:blur(14px);border:1px solid rgba(214,239,255,.3);font:500 13px/1.3 var(--d);z-index:2;animation:fl 7s ease-in-out infinite alternate}
+.chip b{display:block;font-size:26px;background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c1{left:-8%;bottom:14%}.c2{right:2%;top:10%;animation-delay:-3s}
+/* marquee */
+.mq{padding:22px 0;border-block:1px solid rgba(214,239,255,.15);background:rgba(214,239,255,.04);overflow:hidden}
+.mq div{display:flex;gap:64px;width:max-content;animation:mq 30s linear infinite;font:500 clamp(18px,2.2vw,28px) var(--d);color:rgba(214,239,255,.55)}
+@keyframes mq{to{transform:translateX(-50%)}}
+/* cards */
+.gr{display:grid;gap:20px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{position:relative;padding:30px;border-radius:24px;background:linear-gradient(160deg,rgba(214,239,255,.1),rgba(214,239,255,.02));border:1px solid rgba(214,239,255,.16);transition:transform .35s,border-color .35s}
+.card:hover{transform:translateY(-6px);border-color:rgba(214,239,255,.5)}
+.card h3{font:500 21px/1.25 var(--d);letter-spacing:-.02em;margin-bottom:10px}
+.card p,.card li{font-size:15px;color:rgba(228,243,253,.72)}
+.card ul{margin:0;padding-left:18px}
+.big{font:700 clamp(44px,5.4vw,76px)/1 var(--d);letter-spacing:-.05em;display:block;background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:8px}
+.sec2{background:linear-gradient(180deg,#1C1C1C,#2D2D2D)}
+/* light section */
+.lt{background:linear-gradient(160deg,#D6EFFF,#b4d4e6 55%,#8aa9ba);color:var(--k)}
+.lt .sub{color:rgba(28,28,28,.7)}.lt .tag{color:var(--k2);border-color:rgba(28,28,28,.3);background:rgba(28,28,28,.06)}
+.lt h2{color:var(--k)}
+.lt .card{background:linear-gradient(160deg,rgba(28,28,28,.92),rgba(45,45,45,.88));color:#e4f3fd;border-color:transparent}
+.bars{display:flex;align-items:flex-end;gap:24px;height:320px;padding:28px 28px 0}
+.bar{flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;font:700 34px var(--d)}
+.bar i{display:block;height:0;margin-top:8px;border-radius:14px 14px 0 0;background:linear-gradient(180deg,#D6EFFF,#4b5a63);transition:height 1.5s cubic-bezier(.2,.7,.2,1)}
+.bar:first-child i{background:linear-gradient(180deg,#8aa9ba,#2D2D2D)}
+.cap{display:flex;gap:24px;padding:12px 28px 24px;font-size:14px;color:rgba(228,243,253,.7)}.cap span{flex:1}
+.two{display:grid;grid-template-columns:1.1fr 1fr;gap:20px}
+.mini{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.mini .card{padding:24px}
+/* timeline */
+.tl{position:relative;max-width:900px;margin:0 auto}
+.tl::before{content:"";position:absolute;left:19px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#D6EFFF,rgba(214,239,255,.05))}
+.tn{position:relative;padding:0 0 28px 64px}
+.tn::before{content:"";position:absolute;left:10px;top:30px;width:20px;height:20px;border-radius:50%;background:var(--k);border:3px solid var(--i);box-shadow:0 0 0 6px rgba(214,239,255,.12)}
+.tn.now::before{background:var(--i);box-shadow:0 0 24px 6px rgba(214,239,255,.5)}
+.tn .card{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 28px}
+.tn h3{margin:0}.tn time{font:700 clamp(26px,3.4vw,40px) var(--d);letter-spacing:-.04em;background:var(--gt);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.tn small{display:block;font-size:14px;color:rgba(228,243,253,.6)}
+/* awards */
+.aw{display:flex;justify-content:space-between;gap:20px;align-items:center;padding:24px 30px}
+.aw strong{font:700 clamp(20px,2.6vw,32px)/1.15 var(--d);letter-spacing:-.03em}
+.aw span{font-size:14px;color:rgba(228,243,253,.65);text-align:right;max-width:30ch}
+.pill{display:flex;flex-wrap:wrap;gap:12px}
+.pill b{padding:14px 24px;border-radius:999px;background:linear-gradient(135deg,rgba(214,239,255,.16),rgba(214,239,255,.03));border:1px solid rgba(214,239,255,.3);font:500 17px var(--d)}
+.dash{border:1px dashed rgba(214,239,255,.4);border-radius:18px;padding:20px;margin-top:20px;font-size:14px;color:rgba(214,239,255,.65)}
+/* cta + footer */
+.cta{text-align:center;background:radial-gradient(ellipse at 50% 100%,rgba(214,239,255,.3),transparent 65%),linear-gradient(180deg,#2D2D2D,#1C1C1C)}
+.cta h2{font-size:clamp(40px,7vw,104px);max-width:12ch;margin:0 auto 32px}
+footer{padding:48px clamp(20px,5vw,72px) calc(30px + env(safe-area-inset-bottom,0px));background:#1C1C1C;border-top:1px solid rgba(214,239,255,.15);font-size:14px;color:rgba(228,243,253,.6)}
+.fg{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:32px}
+footer b{display:block;color:var(--i);font:500 15px var(--d);margin-bottom:10px}footer a{display:block;text-decoration:none;padding:3px 0}footer a:hover{color:var(--i)}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s}.rv.on{opacity:1;transform:none}
+@media(max-width:900px){.hg,.two,.g2,.fg{grid-template-columns:1fr}.g3,.g4{grid-template-columns:1fr 1fr}.nv nav{display:none}.nv.open nav{display:flex;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;gap:14px;padding:22px;border-radius:24px;background:rgba(28,28,28,.95);border:1px solid rgba(214,239,255,.2)}.nv{position:relative}#mb{display:block}.por{max-width:340px}.c1{left:0}.c2{right:0}.nv .btn{display:none}.aw{flex-direction:column;align-items:flex-start}.aw span{text-align:left}}
+@media(max-width:560px){.g3,.g4,.mini{grid-template-columns:1fr}.tn .card{flex-direction:column;align-items:flex-start;gap:6px}.bars{height:240px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+#pg{position:fixed;top:0;left:0;right:0;height:3px;z-index:60;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,#2D2D2D,#D6EFFF);box-shadow:0 0 12px rgba(214,239,255,.8)}
+.gt,.big{background-size:220% 100%;animation:sh 7s ease-in-out infinite alternate}@keyframes sh{to{background-position:100% 0}}
+.hero .w>div:first-child>*{animation:up 1s cubic-bezier(.2,.7,.2,1) both}.hero .w>div:first-child>*:nth-child(2){animation-delay:.12s}.hero .w>div:first-child>*:nth-child(3){animation-delay:.26s}.hero .w>div:first-child>*:nth-child(4){animation-delay:.4s}.hero .w>div:first-child>*:nth-child(5){animation-delay:.5s}
+.por{animation:zm 1.4s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes up{from{opacity:0;transform:translateY(36px)}}@keyframes zm{from{opacity:0;transform:scale(.86) rotate(2deg)}}
+@keyframes ring{to{transform:rotate(360deg)}}
+.card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(300px circle at var(--mx,50%) var(--my,50%),rgba(214,239,255,.17),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.card:hover::after{opacity:1}
+.jt{position:relative;max-width:1080px;margin:0 auto;padding:10px 0}
+.jf{display:none}
+.jn{position:relative;display:grid;grid-template-columns:1fr 1fr;margin-bottom:clamp(36px,6vw,72px)}
+.jn .tc{padding:18px;opacity:0;transition:opacity .9s,transform .9s cubic-bezier(.2,.7,.2,1)}
+.jn.l .tc{grid-column:1;margin-right:56px;transform:translateX(-80px)}.jn.r .tc{grid-column:2;margin-left:56px;transform:translateX(80px)}
+.jn.on .tc{opacity:1;transform:none}
+.nd{position:absolute;left:50%;top:44px;width:22px;height:22px;margin-left:-11px;border-radius:50%;background:var(--k);border:3px solid var(--i);z-index:2;transform:scale(.4);transition:transform .6s,background .6s}
+.jn.on .nd{transform:scale(1);background:var(--i);box-shadow:0 0 0 6px rgba(214,239,255,.15)}
+.jn.now .nd{box-shadow:0 0 28px 8px rgba(214,239,255,.6)}
+.tc .ph{aspect-ratio:16/10;border-radius:16px;margin-bottom:18px;display:grid;place-items:center;text-align:center;font-size:13px;line-height:1.5;color:rgba(214,239,255,.75);background:radial-gradient(circle,rgba(214,239,255,.35) 1.5px,transparent 2px) 0 0/16px 16px,linear-gradient(150deg,#3a4750,#1C1C1C);border:1px dashed rgba(214,239,255,.35);transition:transform .5s}
+.tc:hover .ph{transform:scale(1.03)}
+.tc .ch{font:500 12px var(--d);color:var(--i);opacity:.75;display:block;margin-bottom:4px}
+.tc time{font:700 clamp(32px,4vw,52px)/1 var(--d);letter-spacing:-.04em;display:block;margin-bottom:6px}
+.tc small{display:block;font-size:14px;color:rgba(228,243,253,.6);margin-top:4px}
+.tc .pt{margin-top:14px;padding-top:12px;border-top:1px dotted rgba(214,239,255,.35);font-size:14px;color:rgba(214,239,255,.6)}
+@media(max-width:900px){.jt::before,.jf{left:19px}.jn{grid-template-columns:1fr}.jn.l .tc,.jn.r .tc{grid-column:1;margin:0 0 0 50px;transform:translateX(40px)}.nd{left:19px}}
+@media(prefers-reduced-motion:reduce){.jn .tc{opacity:1;transform:none}.nd{transform:none}}
+.jt svg.fl{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1}
+.fp{filter:drop-shadow(0 0 7px rgba(214,239,255,.85))}.ff{animation:flow 3s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-240}}
+.hl{transform-box:fill-box;transform-origin:center;animation:hp 1.8s ease-out infinite}@keyframes hp{from{transform:scale(.6);opacity:.8}to{transform:scale(3.2);opacity:0}}
+.fgl{filter:blur(5px)}.ff2{animation:flow2 1.6s linear infinite}@keyframes flow2{to{stroke-dashoffset:-100}}
+.jt .fp{stroke-width:5}
+.jn.on .nd{box-shadow:0 0 0 6px rgba(214,239,255,.18),0 0 22px 4px rgba(214,239,255,.45)}
+.nd{width:28px;height:28px;margin-left:-14px;top:41px;background:transparent!important;border:4px solid var(--i);box-shadow:0 0 14px rgba(214,239,255,.35),inset 0 0 10px rgba(214,239,255,.25)}
+.jn.on .nd{background:transparent!important;box-shadow:0 0 0 5px rgba(214,239,255,.12),0 0 24px 4px rgba(214,239,255,.5),inset 0 0 12px rgba(214,239,255,.4)}
+</style></head>
+<body>
+<div id="pg"></div><header><div class="nv" id="nv"><b>N.V. Ramayya</b>
+<nav aria-label="Primary"><a href="#top">Home</a><a href="#expertise">Expertise</a><a href="#journey">Journey</a><a href="#impact">Impact</a><a href="#awards">Awards</a><a href="#contact">Contact</a></nav>
+<button id="mb" aria-expanded="false">Menu</button><a class="btn p" href="#contact">Connect</a></div></header>
+
+<section class="hero" id="top"><canvas class="dots"></canvas><div class="glow" style="width:420px;height:420px;right:-80px;top:80px"></div>
+<div class="w hg"><div>
+<span class="tag">Head Agency – South2, Axis Max Life Insurance</span>
+<h1>Building teams. <span class="gt">Building leaders. Building business.</span></h1>
+<p class="l">Twenty-three years of experience and more than twenty in life insurance. Today he leads 58 offices across Tamil Nadu, Andhra Pradesh and Telangana.</p>
+<a class="btn p" href="#journey">Explore the journey</a> <a class="btn" href="#contact">Get in touch</a></div>
+<div class="por"><div>Placeholder: professional portrait to be supplied</div>
+<div class="chip c1" style="text-align:left;color:#e4f3fd"><b>110%</b>Zone plan achievement</div>
+<div class="chip c2" style="text-align:left;color:#e4f3fd"><b>23+</b>Years of experience</div></div></div></section>
+
+<div class="mq" aria-hidden="true"><div><span>Axis Max Life Insurance</span><span>Max Life Insurance</span><span>ICICI Prudential Life</span><span>Globarena</span><span>Lakshmi Balaji Bottling</span><span>Xerox India</span><span>Axis Max Life Insurance</span><span>Max Life Insurance</span><span>ICICI Prudential Life</span><span>Globarena</span><span>Lakshmi Balaji Bottling</span><span>Xerox India</span></div></div>
+
+<section class="sec2" id="glance"><div class="w"><span class="tag">At a glance</span><h2>A career in <span class="gt">numbers.</span></h2>
+<p class="sub">Figures come from his CV. Volumes belong to the organisation he leads, not to personal sales.</p>
+<div class="gr g4">
+<div class="card rv"><span class="big" data-n="23" data-s="+">0</span><p>Years of professional experience</p></div>
+<div class="card rv"><span class="big" data-n="20" data-s="+">0</span><p>Years in life insurance</p></div>
+<div class="card rv"><span class="big" data-n="58">0</span><p>Offices in South2, across 106 units</p></div>
+<div class="card rv"><span class="big">250 Cr</span><p>Current-year budget for the role</p></div>
+<div class="card rv" style="grid-column:span 2"><span class="big">201 Cr</span><p>Last-year MFYP volume, as stated in the CV for South2</p></div>
+<div class="card rv" style="grid-column:span 2"><span class="big">235 Cr</span><p>Last-year WFYP volume, as stated in the CV for South2</p></div>
+</div></div></section>
+
+<section id="expertise"><canvas class="dots"></canvas><div class="w"><span class="tag">Expertise</span><h2>What he <span class="gt">does best.</span></h2>
+<p class="sub">Two decades across sales, distribution and agency leadership.</p>
+<div class="gr g3">
+<div class="card rv"><h3>Agency leadership</h3><p>Leads large regional agency organisations through managers, units and offices.</p></div>
+<div class="card rv"><h3>Branch establishment</h3><p>Opened the Vizianagaram branch at ICICI Prudential and reached 120% of target in year one.</p></div>
+<div class="card rv"><h3>Recruitment and activation</h3><p>Zone recruitment grew 37% and activation grew 48%.</p></div>
+<div class="card rv"><h3>Leadership development</h3><p>Over 140 frontline promotions in the zone, with succession planned early.</p></div>
+<div class="card rv"><h3>Performance management</h3><p>Rated best performer in 9 of the last 10 evaluations.</p></div>
+<div class="card rv"><h3>Digital transformation</h3><p>Led GROW, the digital PRP that digitalised reviews at every level.</p></div>
+</div></div></section>
+
+<section class="sec2" id="journey"><div class="w"><span class="tag">Journey</span><h2>A journey, <span class="gt">chapter by chapter.</span></h2>
+<p class="sub">From Senior Partner in 2010 to Head Agency – South2 in 2026. Before that, ICICI Prudential Life from September 2004 to February 2010.</p>
+<div class="jt"><div class="jf"></div><div class="jn l"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 01</span><time class="gt">2004</time><h3>ICICI Prudential Life</h3><small>September 2004 to February 2010. Unit manager to branch manager.</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn r"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 02</span><time class="gt">2010</time><h3>Senior Partner</h3><small>February. Joins Max Life.</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn l"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 03</span><time class="gt">2013</time><h3>Managing Partner</h3><small>March</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn r"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 04</span><time class="gt">2017</time><h3>Senior Managing Partner</h3><small>June</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn l"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 05</span><time class="gt">2018</time><h3>ARM</h3><small>May</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn r"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 06</span><time class="gt">2019</time><h3>RM</h3><small>April</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn l"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 07</span><time class="gt">2021</time><h3>Senior RM</h3><small>April</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn r"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 08</span><time class="gt">2022</time><h3>Zone Vice President</h3><small>December</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn l"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 09</span><time class="gt">2026</time><h3>Senior Zone Vice President</h3><small>February</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div><div class="jn r now"><div class="tc card"><div class="ph"><span>Photo placeholder<br>to be shared for this chapter</span></div><span class="ch">Chapter 10</span><time class="gt">2026</time><h3>Head Agency – South2</h3><small>June. Tamil Nadu, Andhra Pradesh, Telangana.</small><p class="pt">Placeholder: Ramayya’s own words about this chapter to be shared.</p></div><i class="nd"></i></div></div>
+</div></div></section>
+
+<section class="lt" id="impact"><div class="w"><span class="tag">Leadership impact</span><h2>From 80 crore to 201 crore.</h2>
+<p class="sub">Zone business over four years, a CAGR of 26%.</p>
+<div class="two"><div class="card" style="padding:0"><div class="bars" id="bars" role="img" aria-label="Zone business grew from 80 crore to 201 crore"><div class="bar">80<i data-h="40"></i></div><div class="bar">201<i data-h="100"></i></div></div><div class="cap"><span>Four years earlier</span><span>Now</span></div></div>
+<div class="mini">
+<div class="card"><span class="big">110%</span><p>Plan achievement</p></div><div class="card"><span class="big">44.2%</span><p>Year-on-year growth</p></div>
+<div class="card"><span class="big">71%</span><p>Offices met plan in FY26</p></div><div class="card"><span class="big">9/10</span><p>Best performance rating over the last ten years</p></div></div></div>
+<div class="card" style="margin-top:20px"><h3>No. 1 Zone, FY24, FY25 and FY26</h3><p>Ranked first on GPA, top line, new ADM success, recruitment, RAG score and WOW qualifiers.</p></div>
+</div></section>
+
+<section id="people"><canvas class="dots"></canvas><div class="w"><div class="gr g2" style="align-items:center;gap:clamp(32px,6vw,80px)">
+<div><span class="tag">Building leaders</span><h2>Growth is measured in <span class="gt">people who grow.</span></h2>
+<p class="sub" style="margin-bottom:0">As a sales manager in Vizianagaram, four of five unit managers became agency managers, and two went on to sales manager. As a regional manager he delivered over 60 promotions in FY22.</p></div>
+<div class="gr"><div class="card rv"><span class="big">140+</span><p>Frontline promotions in the zone, at about 20%</p></div>
+<div class="card rv"><span class="big">60+</span><p>Promotions in his region during FY22</p></div>
+<div class="dash">Placeholder: team photographs to be supplied</div></div></div></div></section>
+
+<section class="sec2" id="transform"><div class="w"><span class="tag">Business transformation</span><h2>Fix it. <span class="gt">Then scale it.</span></h2><p class="sub">Results documented at each stage of his career.</p>
+<div class="gr g2">
+<div class="card rv"><h3>Office Head and ARM</h3><ul><li>Business doubled in three years and qualified for Pot of Gold</li><li>AAP channel grew from 86 lakh to 2.47 crore, 2016–17 to 2018–19</li><li>Pan-India topper on AWS qualifiers per ADM, 310 qualifiers in 2018–19</li></ul></div>
+<div class="card rv"><h3>Regional Manager, FY22</h3><ul><li>8 of 11 offices achieved plan</li><li>Top region in the country on plan achievement and GPA</li><li>AAP channel grew from 3.2 crore to 9.1 crore in 24 months</li></ul></div>
+<div class="card rv"><h3>Area Manager, ICICI Prudential</h3><ul><li>Grew the team from 10 to 18 unit managers</li><li>No. 1 Area Manager in Andhra Pradesh</li><li>Gajuwaka became the best branch in the state</li></ul></div>
+<div class="card rv"><h3>Unit Manager, 2004–05</h3><ul><li>No. 1 Unit Manager PAN India</li><li>32 lakh premium on day one</li><li>Produced TOT, MDRT and International Star Club advisors</li></ul></div>
+</div></div></section>
+
+<section id="awards"><canvas class="dots"></canvas><div class="w"><span class="tag">Awards</span><h2>Recognition <span class="gt">earned.</span></h2><p class="sub"></p>
+<div class="gr">
+<div class="card aw rv"><strong>Business Stalwart</strong><span>CEO Award, 2022, for overall performance, quality and people leadership</span></div>
+<div class="card aw rv"><strong>DMM Best Zone</strong><span>FY23, FY24, FY25 and FY26</span></div>
+<div class="card aw rv"><strong>Best Rater</strong><span>9 out of the last 10 years</span></div>
+<div class="card aw rv"><strong>No. 1 Unit Manager</strong><span>PAN India, 2004–05</span></div></div></div></section>
+
+<section class="sec2" id="philosophy"><div class="w"><div class="gr g2" style="gap:clamp(32px,6vw,80px)">
+<div><span class="tag">Digital transformation</span><h2>Reviews, <span class="gt">digitalised.</span></h2><p class="sub" style="margin-bottom:0">He led GROW, the digital PRP, which digitalised the review mechanism at all levels.</p><div class="dash">Placeholder: scope and outcomes to be supplied</div></div>
+<div><span class="tag">Leadership philosophy</span><h2>What he <span class="gt">leads with.</span></h2><div class="pill"><b>Agility</b><b>Problem solving</b><b>People leadership</b><b>Execution excellence</b><b>Succession planning</b></div></div></div></div></section>
+
+<section id="early"><canvas class="dots"></canvas><div class="w"><span class="tag">Foundation</span><h2>Where it <span class="gt">started.</span></h2><p class="sub">The groundwork before life insurance.</p>
+<div class="gr g4">
+<div class="card rv"><h3>Xerox India</h3><p>2000–2002. Market research executive in government and corporate sales.</p></div>
+<div class="card rv"><h3>Lakshmi Balaji Bottling</h3><p>2002–2004. Logistics executive for a Coca-Cola co-packer.</p></div>
+<div class="card rv"><h3>Globarena</h3><p>2004. Business promotion to colleges across the coastal belt.</p></div>
+<div class="card rv"><h3>ICICI Prudential</h3><p>2004–2010. Unit manager to branch manager.</p></div></div>
+<div class="gr g2" style="margin-top:20px"><div class="card"><h3>MBA</h3><p>MR College of Management, Andhra University, 1997–1999</p></div><div class="card"><h3>B.Com</h3><p>MR College, Andhra University, 1994–1997</p></div></div></div></section>
+
+<section class="cta" id="contact"><canvas class="dots"></canvas><div class="w"><h2>Let’s build <span class="gt">what comes next.</span></h2>
+<a class="btn p" href="#contact">Email: to be supplied</a> <a class="btn" href="#contact">LinkedIn: to be supplied</a></div></section>
+
+<footer><div class="fg"><div><b>N.V. Ramayya</b>Head Agency – South2, Axis Max Life Insurance. Contact details will be added once verified.</div>
+<div><b>Explore</b><a href="#journey">Journey</a><a href="#impact">Impact</a><a href="#awards">Awards</a></div><div><b>Connect</b><a href="#contact">Email</a><a href="#contact">LinkedIn</a><a href="#top">Back to top</a></div></div></footer>
+
+<script>
+(function(){
+var reduce=matchMedia('(prefers-reduced-motion:reduce)').matches,touch=matchMedia('(pointer:coarse)').matches,px=-999,py=-999,F=[];
+function Field(cv){var s=cv.parentElement,x=cv.getContext('2d'),G=30,P,C,R_,w,h,busy=true;
+function size(){var d=Math.min(devicePixelRatio||1,2),r=s.getBoundingClientRect();w=r.width;h=r.height;cv.width=w*d;cv.height=h*d;x.setTransform(d,0,0,d,0,0);C=Math.ceil(w/G)+1;R_=Math.ceil(h/G)+1;P=[];for(var i=0;i<C*R_;i++)P.push([0,0]);draw(0,0,0)}
+function draw(mx,my,live){x.clearRect(0,0,w,h);var mv=0;for(var j=0;j<R_;j++)for(var i=0;i<C;i++){var p=P[j*C+i],a=i*G,b=j*G,tx=0,ty=0;
+if(live){var ex=a-mx,ey=b-my,d=Math.sqrt(ex*ex+ey*ey);if(d<170){var k=1-d/170;k=k*k*(3-2*k);tx=ex/(d||1)*k*22;ty=ey/(d||1)*k*22}}
+p[0]+=(tx-p[0])*.1;p[1]+=(ty-p[1])*.1;if(Math.abs(p[0]-tx)>.05||Math.abs(p[1]-ty)>.05)mv=1;var q=Math.min(1,Math.hypot(p[0],p[1])/22);
+x.fillStyle='rgba(214,239,255,'+(.13+q*.55)+')';x.beginPath();x.arc(a+p[0],b+p[1],1.2+q*1.7,0,6.283);x.fill()}busy=mv}
+this.tick=function(){var r=cv.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var n=px>-900&&py>r.top-170&&py<r.bottom+170;if(n||busy)draw(px-r.left,py-r.top,n)};
+size();addEventListener('resize',size)}
+document.querySelectorAll('canvas.dots').forEach(function(c){F.push(new Field(c))});
+if(!reduce&&!touch){addEventListener('pointermove',function(e){px=e.clientX;py=e.clientY});(function L(){F.forEach(function(f){f.tick()});requestAnimationFrame(L)})()}
+document.querySelectorAll('section:not(.hero) h2,section:not(.hero) .sub,section:not(.hero) .tag').forEach(function(e){e.classList.add('rv')});
+document.querySelectorAll('.gr').forEach(function(g){[].forEach.call(g.children,function(c,i){c.style.transitionDelay=(i*90)+'ms'})});
+var pg=document.getElementById('pg'),jt=document.querySelector('.jt'),pp=document.querySelectorAll('[data-p]');
+function sc(){var m=document.documentElement.scrollHeight-innerHeight;pg.style.transform='scaleX('+(m>0?scrollY/m:0)+')';
+if(jt){var r=jt.getBoundingClientRect();var f=Math.max(0,Math.min(1,(innerHeight*.55-r.top)/r.height));jt.style.setProperty('--f',f);if(jp)fl(f)}
+if(!reduce)pp.forEach(function(e){var r=e.parentElement.getBoundingClientRect();e.style.translate='0 '+((r.top+r.height/2-innerHeight/2)*(+e.dataset.p))+'px'})}
+addEventListener('scroll',sc,{passive:true});var jp,jg,jc,jh,jl=0;
+function fl(f){jp.style.strokeDashoffset=jl*(1-f);jg.style.strokeDashoffset=jl*(1-f);var q=jp.getPointAtLength(jl*f);jc.setAttribute('cx',q.x);jc.setAttribute('cy',q.y);jh.setAttribute('cx',q.x);jh.setAttribute('cy',q.y)}
+function build(){if(!jt)return;var o=jt.querySelector('svg.fl');if(o)o.remove();var W=jt.offsetWidth,H=jt.offsetHeight,m=innerWidth<=900,cx=m?19:W/2,k=0,
+ys=[0].concat([].map.call(jt.querySelectorAll('.jn'),function(n){return n.offsetTop+55}),[H]),d='M'+cx+' 0';
+for(var i=0;i<ys.length-1;i++){var a=ys[i],b=ys[i+1],h=b-a,dr=i%2?-1:1;d+=' C'+(cx+dr*k)+' '+(a+h/3)+' '+(cx+dr*k)+' '+(a+2*h/3)+' '+cx+' '+b}
+var N='http://www.w3.org/2000/svg';jt.insertAdjacentHTML('afterbegin','<svg class="fl" aria-hidden="true" viewBox="0 0 '+W+' '+H+'"><defs><linearGradient id="fg" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="'+H+'"><stop offset="0" stop-color="#D6EFFF"/><stop offset=".5" stop-color="#7f9fb2"/><stop offset="1" stop-color="#D6EFFF"/></linearGradient></defs><path d="'+d+'" fill="none" stroke="rgba(214,239,255,.16)" stroke-width="2" stroke-linecap="round"/><path class="fgl" d="'+d+'" fill="none" stroke="url(#fg)" stroke-width="14" stroke-linecap="round" opacity=".28"/><path class="fp" d="'+d+'" fill="none" stroke="url(#fg)" stroke-width="4" stroke-linecap="round"/><circle class="hl" r="8" fill="rgba(214,239,255,.5)"/><circle r="7" fill="#D6EFFF" style="filter:drop-shadow(0 0 10px #D6EFFF)"/></svg>');
+var sv=jt.querySelector('svg.fl');jp=sv.querySelector('.fp');var cs=sv.querySelectorAll('circle');jh=cs[0];jc=cs[1];jl=jp.getTotalLength();jg=sv.querySelector('.fgl');jg.style.strokeDasharray=jl;jp.style.strokeDasharray=jl;sc()}
+addEventListener('resize',build);build();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(build);addEventListener('load',build);
+
+if(!touch)document.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.card');if(c){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}});
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var t=e.target;io.unobserve(t);t.classList.add('on');setTimeout(function(){t.style.transitionDelay=''},1800);
+if(t.dataset.n){var n=+t.dataset.n,s=t.dataset.s||'',st=performance.now();(function f(now){var p=reduce?1:Math.min(1,(now-st)/1400);t.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(f)})(st)}
+if(t.id==='bars')t.querySelectorAll('i').forEach(function(i){i.style.height=i.dataset.h+'%'})})},{threshold:.25});
+document.querySelectorAll('.rv,.jn,[data-n],#bars').forEach(function(e){io.observe(e)});
+var nv=document.getElementById('nv'),mb=document.getElementById('mb');
+mb.onclick=function(){var o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+nv.querySelectorAll('nav a').forEach(function(a){a.onclick=function(){nv.classList.remove('open')}});
+})();
+</script></body></html>
